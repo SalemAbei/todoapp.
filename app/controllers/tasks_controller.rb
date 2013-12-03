@@ -4,7 +4,9 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @done = Task.where(done: true)
+    @done = Task.where(done: true).order(created_at: :desc)
     @todo = Task.where(done: false)
+    @todo = Task.where(done: false).order(updated_at: :desc)
   end
 
   # GET /tasks/1
