@@ -6,6 +6,7 @@
       <th>Deadline</th>
       <th>Duration</th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -15,6 +16,13 @@
         <td><%= task.name %></td>
         <td><%= task.deadline %></td>
         <td><%= task.duration %></td>
+
+        <td>
+        <%= form_for task do |f| %>
+        <%= f.check_box :done, class: "checkable" %>
+        <% end %>
+        </td>
+
 
        <% if notice %> 
           <p id="notice" class="alert alert-success alert-dismissable fade in" data-dismiss="alert" aria-hidden="true">
