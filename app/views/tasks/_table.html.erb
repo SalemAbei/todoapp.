@@ -25,7 +25,8 @@
 
 
         <td><%= task.name %></td>
-        <td><%= link_to task.name, edit_task_path(task) %></td>
+        <td class="<%= css_class %>">
+<%= link_to task.name, edit_task_path(task) %></td>
 
         <td><%= link_to 'Destroy', task, class: "btn btn-danger btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
